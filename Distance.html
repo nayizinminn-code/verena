@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Distance from University</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background:#F8F3FF;
+            text-align:center;
+            margin-top:100px;
+        }
+
+        .box{
+            width:400px;
+            margin:auto;
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.2);
+        }
+
+        h1{
+            color:#6A1B9A;
+        }
+
+        input{
+            padding:8px;
+            width:170px;
+            margin:5px;
+        }
+
+        button{
+            background:#6A1B9A;
+            color:white;
+            padding:10px 20px;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+            margin:5px;
+        }
+
+        button:hover{
+            background:#4A148C;
+        }
+
+        #result{
+            color:#4A148C;
+            margin-top:20px;
+            font-size:22px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>Distance from University</h1>
+
+<input type="number" id="x" placeholder="Enter X">
+
+<br><br>
+
+<input type="number" id="y" placeholder="Enter Y">
+
+<br><br>
+
+<button onclick="calculateDistance()">Calculate</button>
+
+<button onclick="history.back()">Back</button>
+
+<h2 id="result"></h2>
+
+</div>
+
+<script>
+
+function calculateDistance(){
+
+    let x = document.getElementById("x").value;
+    let y = document.getElementById("y").value;
+
+    // Validation
+    if(x == "" || y == ""){
+        alert("Please enter both X and Y values.");
+        return;
+    }
+
+    x = Number(x);
+    y = Number(y);
+
+    let distance = Math.sqrt(x*x + y*y);
+
+    document.getElementById("result").innerHTML =
+    "Distance = " + distance.toFixed(2);
+
+}
+
+</script>
+
+</body>
+</html>
