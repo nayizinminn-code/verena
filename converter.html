@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Measurement Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Measurement Converter</h1>
+
+    <div class="form-group">
+        <label for="inchInput">Enter Inch: </label>
+        <input type="number" id="inchInput" placeholder="Enter value">
+    </div>
+
+    <br>
+
+    <button onclick="convertMeasurement()">Submit</button>
+
+    <button onclick="location.href='index.html'">
+        Back
+    </button>
+
+    <div id="result"></div>
+
+</div>
+
+<script>
+
+function convertMeasurement() {
+
+    let inchValue = document.getElementById("inchInput").value;
+
+    let inches = parseFloat(inchValue);
+
+    if (!isNaN(inches)) {
+
+        let cmValue = inches * 2.54;
+
+        document.getElementById("result").innerText =
+        "Equal to " + cmValue + " cm";
+
+    } else {
+
+        document.getElementById("result").innerText =
+        "Please enter a valid number.";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
+<button onclick="location.href='index.html'">
+    Back
+</button>
